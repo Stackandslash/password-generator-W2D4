@@ -14,7 +14,7 @@ function generatePassword(){
   var numberOfCharacters = prompt("How many characters do you want in this password? \n Between 8-128 required.") //Pop up a query, asking how many characters they want in their password.
   if (numberOfCharacters > 128 || numberOfCharacters < 8 || isNaN(numberOfCharacters)){
     alert("I'm afraid I can't do that, Dave. \n (Invalid amount of characters. A digital number between 8-128 is required.)"); //If user enters ineligible input (Too many/few characters, or a non-number), alert an error and stop.
-    return;
+    return "";
   }
   var lowerCharacters = confirm("Do you want to include lower-case characters?");
   var upperCharacters = confirm("Do you want to include upper-case characters?");
@@ -36,7 +36,7 @@ function generatePassword(){
   }
   if (characterString.length == 0){
     alert("We don't have any characters to work with, so we can't make a password.");
-    return;
+    return "";
   }
 
   for (i = 1; i <= numberOfCharacters; i++) {
